@@ -1,23 +1,9 @@
 package br.com.dio.desafio.dominio;
 
-public class Curso {
+public class Curso extends Content {
 	
-	private String title;
-	private String description;
 	private int duration;
 	
-	public String getTitle() {
-		return title;
-	}
-	public void setTitle(String title) {
-		this.title = title;
-	}
-	public String getDescription() {
-		return description;
-	}
-	public void setDescription(String description) {
-		this.description = description;
-	}
 	public int getDuration() {
 		return duration;
 	}
@@ -26,14 +12,23 @@ public class Curso {
 	}
 	
 	@Override
-	public String toString() {
-		return "Curso [title="
-						+ title
-						+ ", description="
-						+ description
-						+ ", duration="
-						+ duration
-						+ "]";
+	public double calcXp() {
+		return XP_PADRAO * duration ;
 	}	
 	
+	@Override
+	public String toString() {
+		return "Curso [Nome: "
+						+ getTitle()
+						+ ", Descrição: "
+						+ getDescription()
+						+ ", Duração: "
+						+ duration
+						+ ", Local: "
+						+ getLocal()
+						+", Idioma: "
+						+ getLang()
+						+ "]";
+	}
+		
 }
